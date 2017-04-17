@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 다른 mapper와 중복되지 않는 네임스페이스 기재 -->
+<mapper namespace="member">
+
+	<insert id="insert">
+		insert into member(userid, userpw, username, email)
+		values 
+		( #{userid}, #{userpw}, #{username}, #{email} )
+	</insert>
+	
+	<select id="list" resultType="com.example.web06.model.dto.MemberVO">
+		select * from member
+	</select>
+	
+	<delete id="delete">
+		delete from member where userid=#{userid}
+	</delete>
+	
+	<select id="view" resultType="com.example.web06.model.dto.MemberVO">
+		select * from member where userid=#{userid}
+	</select>
+	
+	<update id="update">
+	    update member 
+	    set userid=#{userid}, userpw=#{userpw}, username=#{username}, email=#{email}
+	    where userid=#{userid}
+	</update>
+	
+</mapper>
