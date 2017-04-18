@@ -35,7 +35,7 @@ public class HomeController {
 		// model 은 view 단으로 데이터를 넘기기 위한 Map형 자료구조이다.
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "home";
+		return "home"; //WEB-INF/views/home.jsp 
 	}
 	
 	/* http://localhost:8080/web06/doA - http://localhost:8080/ContextPath/doA             */	
