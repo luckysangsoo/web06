@@ -40,17 +40,16 @@ public class HomeController {
 	
 	/* http://localhost:8080/web06/doA - http://localhost:8080/ContextPath/doA             */	
 	@RequestMapping("/doA") 
-	public String doA(){
-		logger.info("test/calldoA.jsp called ----------------");
-		
-		return "test/calldoA";  // views/test/calldoA.jsp
+	public void doA(){
+		logger.info("doA.jsp called ----------------");
+		// doA.jsp 호출
 	}
 	
 	@RequestMapping("/doB") 
 	public String doB(Model model){
 		logger.info("test/calldoB.jsp called ----------------");
 		model.addAttribute("name","shim");
-		return "test/calldoB";  // views/test/calldoA.jsp
+		return "test/calldoB";  // views/test/calldoB.jsp
 	}
 	
 	@RequestMapping("/doC") 
